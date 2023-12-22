@@ -18,6 +18,11 @@ BinarySearchTree - TreeNode (create, delete, search, search subTree)
 
 BinaryTree(DFT - depth-first traversal, BFT - breadth-first traversal)
 
-Comparable<T> compareTo
+interface Comparable<T> compareTo
+
+Binary Heap (Ordering Property, Shape Property), Min Heap, Max Heap, Heap Sort
+
+
+
 
 

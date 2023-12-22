@@ -173,6 +173,4 @@ public class BinarySearchTree<T extends Comparable<T>> {
         boolean isSubtree = new BinarySearchTree<>().findSubtree(mainNode.root, subtree.root);
         mainNode.delete(15);
     }
-    // TODO: 11/29/23 delete node
-    // TODO: 11/29/23 find subtree
-}
+ }
