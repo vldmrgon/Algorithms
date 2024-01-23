@@ -8,6 +8,7 @@ public class OddOccurrencesInArray {
     public static void main(String[] args) {
         int[] arr = new int[]{9, 3, 9, 3, 9, 7, 9};
         int solution = solution(arr);
+        int i = optimizedSolution(arr);
         System.out.println();
     }
 
@@ -25,5 +26,13 @@ public class OddOccurrencesInArray {
             if (entry.getValue() % 2 != 0) return entry.getKey();
         }
         return 0;
+    }
+
+    public static int optimizedSolution(int[] a) {
+        int result = 0;
+        for (int number : a) {
+            result = result ^ number;
+        }
+        return result;
     }
 }
