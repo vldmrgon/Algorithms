@@ -1,8 +1,15 @@
 package com.my.pro;
 
+import java.util.Arrays;
+
 public class Sorting {
 
     public static void main(String[] args) {
+
+        int[] trArr1 = {10, 2, 5, 1, 8, 20};
+        int triplet1 = triangle(trArr1);
+        int[] trArr2 = {10, 50, 5, 1};
+        int triplet2 = triangle(trArr2);
 
         int[] array = {38, 27, 43, 3, 9, 82, 10};
         mergeSort(array);
@@ -18,6 +25,32 @@ public class Sorting {
 
         int[] arrInsert = {5, 2, 9, 1, 5, 6};
         insertionSort(arrInsert);
+    }
+
+    /*
+     *      0   1  2  3  4   5
+     *      10, 2, 5, 1, 8, 20
+     *       1  2  5  8  10 20
+     *
+     *   A[P] + A[Q] > A[R],
+     *   A[Q] + A[R] > A[P],
+     *   A[R] + A[P] > A[Q].
+     *
+     */
+    public static int triangle(int[] arr) {
+        if (arr.length < 3) return -1;
+        Arrays.sort(arr);
+
+        for (int i = 0; i < arr.length - 2; i++) {
+            if (
+                    (arr[i] + arr[i + 1] > arr[i + 2])
+                            && (arr[i + 1] + arr[i + 2] > arr[i])
+                            && (arr[i + 2] + arr[i] > arr[i + 1])
+            ) {
+                return 1;
+            }
+        }
+        return 0;
     }
 
     public static void mergeSort(int[] arr) {

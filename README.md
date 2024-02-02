@@ -48,4 +48,8 @@ Algorithm sorting (Bubble, Quick, Heap, Insert, Marge)
 
 Middle array:  mid = low + (high - low) / 2;
 
+Majority Vote Algorithm 
+
+Kadane's Algorithm: currentSum = Math.max(num, currentSum + num); maxSum = Math.max(maxSum, currentSum);
+
 

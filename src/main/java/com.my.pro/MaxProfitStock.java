@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Stock {
+public class MaxProfitStock {
 
     public static void main(String[] args) {
 
