@@ -1,5 +1,8 @@
 package com.my.pro;
 
+import java.util.HashSet;
+import java.util.stream.IntStream;
+
 public class StringFunctions {
 
 //    “,,hello,,world,” → [“”, “”, “hello”, “”, “world”, ""]
@@ -16,6 +19,40 @@ public class StringFunctions {
 
         String str = ",,    hel lo ,,world,";
         String[] newArray = parsing(str);
+
+        String haystack = "hello wworld";
+        String needle = "world";
+        boolean b = strStr(haystack, needle);
+    }
+
+
+    /*
+     *     h e l l o  w o r l d
+     *
+     *   1
+     *   2
+     *   3
+     *   4
+     *   5
+     *   6
+     *
+     * */
+
+    public static boolean strStr(String haystack, String needle) {
+        HashSet<String> listWords = new HashSet<>();
+
+        int cycle = haystack.length() - needle.length() + 1;
+        int indexStart = 0;
+        int indexEnd = needle.length();
+
+        while (cycle > 0) {
+            listWords.add(haystack.substring(indexStart, indexEnd));
+
+            indexStart++;
+            indexEnd++;
+            cycle--;
+        }
+        return listWords.contains(needle);
     }
 
     public static String[] parsing(String msg) {

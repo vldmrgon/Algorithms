@@ -31,12 +31,7 @@ public class SearchWordsBenchmarkTest {
 
     @Benchmark
     public void checkSearchWords1() {
-        SearchWords.Result.textQueries1(sentences, queries);
-    }
-
-    @Benchmark
-    public void checkSearchWordsWithReversedIndexWithParallelProcessing() {
-        SearchWords.Result.textQueriesWithReverseIndex(sentences, queries);
+        SearchWords.Result.textQueries(sentences, queries);
     }
 
     @TearDown(Level.Trial)

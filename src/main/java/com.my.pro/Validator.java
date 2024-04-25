@@ -20,7 +20,7 @@ public class Validator {
 
             if (object instanceof Collection) processCollection((Collection<?>) object, stack);
             else if (object instanceof Map) processMap((Map<?, ?>) object, stack);
-            else if (object instanceof Object) processFields(object, stack);
+            else if (object != null) processFields(object, stack);
         }
     }
 
